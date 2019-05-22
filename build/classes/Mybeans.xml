@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+" xmlns:aop="http://www.springframework.org/schema/aop">
+<bean id="greet1" class="com.atos.syntel.pojo.Greetings" lazy-init="true"></bean>
+<!-- contructor injection-->
+<bean id="greet2" class="com.atos.syntel.pojo.Greetings" lazy-init="true">
+    <constructor-arg value="  Welcome to Spring framework">   </constructor-arg> 
+</bean>
+
+<bean id="greet3" class="com.atos.syntel.pojo.Greetings" lazy-init="true">
+    <property name="message" value="Greet three"/> 
+</bean>
+
+
+<!-- contructor injection-->
+<bean id="employee1" class="com.atos.syntel.pojo.Employee" scope="prototype">
+    <constructor-arg index="0" value=" Alice">   </constructor-arg> 
+    <constructor-arg  index ="1" value="110151878">   </constructor-arg> 
+</bean>
+
+<bean id="employee2" class="com.atos.syntel.pojo.Employee">
+    <property name="employeeId" value="employee_id_one"/> 
+    <property name="employeeName" value="employee_name_one"/> 
+</bean>
+
+
+
+
+
+<bean id="address_1" class="com.atos.syntel.pojo.Address">
+    <property name="Street" value="Street one"/> 
+    <property name="City" value="Phoenix"/> 
+    <property name="State" value="AZ"/> 
+    <property name="Country" value="US"/> 
+    <property name="Zip" value="88005"/> 
+</bean>
+
+<bean id="skill_1" class="com.atos.syntel.pojo.Skill">
+    <property name="skillId" value="101"/> 
+    <property name="skillName" value="JAVA"/> 
+    <property name="skillCategory" value="Programming"/> 
+</bean>
+
+
+<bean id="Employee_1" class="com.atos.syntel.pojo.Employee">
+    <property name="employeeId" value="11001"/> 
+    <property name="employeeName" value="Bob"/> 
+    <property name="mailingAddress" ref="address_1"/> 
+    <property name="empPrimarySkill" ref="skill_1"/> 
+</bean>
+
+</beans>

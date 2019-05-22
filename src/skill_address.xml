@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+" xmlns:aop="http://www.springframework.org/schema/aop">
+<!-- contructor injection-->
+<bean id="skill_1" class="com.atos.syntel.pojo.Skill" lazy-init="true">
+    <constructor-arg index="0" value="skill_id_1">   </constructor-arg> 
+    <constructor-arg index="1" value="Java">   </constructor-arg>
+    <constructor-arg index="2" value="skill_category_1">   </constructor-arg>
+</bean>
+
+<bean id="mailaddress_1"  class="com.atos.syntel.pojo.Address" lazy-init="true">
+    <property name="Street" value="1th street"/> 
+    <property name="City" value="Phoenix"/> 
+    <property name="State" value="AZ"/> 
+    <property name="Country" value="US"/> 
+    <property name="Zip" value="80800"/> 
+</bean>
+
+<bean id="homeaddress_1" class="com.atos.syntel.pojo.Address" lazy-init="true">
+    <property name="Street" value="2rd street"/> 
+    <property name="City" value="San Francisco"/> 
+    <property name="State" value="CA"/> 
+    <property name="Country" value="US"/> 
+    <property name="Zip" value="90991"/> 
+</bean>
+</beans>

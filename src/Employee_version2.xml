@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+" xmlns:aop="http://www.springframework.org/schema/aop">
+
+  <import resource="skill_address.xml"/>
+    
+ 
+    
+
+<bean id="employee_1" class="com.atos.syntel.pojo.Employee_version2" lazy-init="true">
+    
+    <property name="employeeId" value="employee_id_one"/> 
+    <property name="employeeName" value="employee_name_one"/> 
+    <property name="address" > 
+        
+        <map>
+            <entry key="1" value-ref ="mailaddress_1"> </entry>
+             <entry key="2" value-ref="homeaddress_1"> </entry>
+        </map>
+    </property>
+    <property name="primary_skills" > 
+        <set>
+            <value>100 </value>
+            <ref bean="skill_1"/>
+        </set>
+    </property>
+</bean>
+
+
+</beans>
